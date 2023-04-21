@@ -1,0 +1,75 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col col-sm-5">
+      <div class="mb-3">
+        <label for="first">Nombre:</label>
+        <input type="text" class="form-control" formControlName="first">
+      </div>
+    </div>
+
+    <div class="col col-sm-5">
+      <div class="mb-3">
+        <label for="last">Apellido:</label>
+        <input type="text" class="form-control" formControlName="last">
+      </div>
+    </div>
+
+    <div class="col col-sm-2">
+      <div class="mb-3">
+        <label for="title">Título:</label>
+        <select class="form-select" formControlName="title">
+          <option value="Mr">Mr.</option>
+          <option value="Mrs">Mrs.</option>
+          <option value="Miss">Miss</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col col-sm-6">
+      <div class="mb-3">
+        <label for="email">E-mail:</label>
+        <input type="email" class="form-control" formControlName="email">
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="mb-3">
+        <label for="phone">Teléfono:</label>
+        <input type="tel" class="form-control" formControlName="phone">
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="mb-3">
+        <label for="cell">Núm. Celular:</label>
+        <input type="tel" class="form-control" formControlName="cell">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col col-md-8 mb-3">
+      <label for="nat">Nacionalidad:</label>
+      <select class="form-select" formControlName="nat">
+        <option *ngFor="let country of countryList" [value]="country.code">{{ country.name }}</option>
+      </select>
+    </div>
+
+    <div class="col col-md-4 mb-3">
+      <label for="gender">Sexo:</label>
+      <select class="form-select" formControlName="gender">
+        <option *ngFor="let gender of genderList" [value]="gender.code">{{ gender.name }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="picture">Imagen: <small>(se agregará de forma aleatoria)</small></label>
+    <input class="form-control" type="file" disabled>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Agregar</button>
+
+</form>

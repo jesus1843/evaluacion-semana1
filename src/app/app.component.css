@@ -1,0 +1,9 @@
+.card {
+  transition: all .2s ease-in-out;
+}
+
+.scale {
+  box-shadow: 0 0 1rem #000;
+  transform: scale(1.3);
+  z-index: 1000;
+}

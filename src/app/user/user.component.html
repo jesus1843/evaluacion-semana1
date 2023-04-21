@@ -1,0 +1,12 @@
+<img [src]="user.picture.large" class="card-img-top" loading="lazy" [alt]="user.email">
+<div class="card-body">
+  <h5 class="card-title">{{ user.fullName }}</h5>
+  <hr>
+  <p class="card-text">Gender: <fa-icon [icon]="user.gender === 'male' ? icons['faMars'] : icons['faVenus']"></fa-icon></p>
+  <p class="card-text">Nationality: {{ user.nationality }}</p>
+</div>
+<div class="card-footer">
+  <small class="d-block"><fa-icon [icon]="icons['faEnvelope']"></fa-icon> - {{ user.email }}</small>
+  <small class="d-block"><fa-icon [icon]="icons['faPhone']"></fa-icon> - {{ user.phone }}</small>
+  <small class="d-block"><fa-icon [icon]="icons['faMobileScreen']"></fa-icon> - {{ user.cell }}</small>
+</div>
